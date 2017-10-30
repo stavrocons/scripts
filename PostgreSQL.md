@@ -20,6 +20,11 @@ pg_dump --no-owner --no-acl db > db.sql -h localhost -U dbuser
 \i path/to/dump.sql
 ```
 
+# Duplicate database
+```postgresql
+create database newdb with template originaldb owner dbuser;
+```
+
 # List all tables
 ```postgresql
 select * from pg_catalog.pg_tables;
