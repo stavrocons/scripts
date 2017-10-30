@@ -22,7 +22,7 @@ pg_dump --no-owner --no-acl db > db.sql -h localhost -U dbuser
 
 # Duplicate database
 ```postgresql
-create database newdb with template originaldb owner dbuser;
+CREATE database newdb with template originaldb owner dbuser;
 ```
 
 # List all tables
