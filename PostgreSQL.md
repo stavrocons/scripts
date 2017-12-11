@@ -1,4 +1,8 @@
 # Database dump / import
+#### Create User  
+```postgresql
+CREATE ROLE user WITH LOGIN PASSWORD 'password'
+```
 
 #### Dublicate  
 ```postgresql
