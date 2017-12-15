@@ -13,7 +13,10 @@ CREATE DATABASE newdb WITH TEMPLATE originaldb OWNER dbuser;
 ```postgresql
 pg_dump db > db.sql -h localhost -U dbuser
 ```
-
+#### Dump data only
+```postgresql
+pg_dump db > db.sql --data-only -h localhost -U dbuser
+```
 #### Dump without owner and access control list
 ```postgresql
 pg_dump --no-owner --no-acl db > db.sql -h localhost -U dbuser
