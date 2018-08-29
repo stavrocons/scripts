@@ -47,3 +47,13 @@ select * from information_schema.columns where table_name = <table_name>;
 cretae extension <extension_name>;
 ```
 
+# Terminate sessions 
+```postgresql
+select pg_terminate_backend(pid) 
+from pg_stat_activity 
+where 
+-- don't kill my own connection!
+pid <> pg_backend_pid()
+-- don't kill the connections to other databases
+and datname = 'database_name';
+```
