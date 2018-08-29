@@ -59,10 +59,7 @@ and datname = 'database_name';
 ```
 # Generate Sequence Update Statements  
 ```postgresql
-select 'select setval(' ||
-       quote_literal(quote_ident(pgt.schemaname) || '.' || quote_ident(s.relname)) ||
-       ', coalesce(max(' ||quote_ident(c.attname)|| '), 1) ) from ' ||
-       quote_ident(pgt.schemaname)|| '.'||quote_ident(t.relname)|| ';'
+select 'select setval(' || quote_literal(quote_ident(pgt.schemaname) || '.' || quote_ident(s.relname)) || ', coalesce(max(' ||quote_ident(c.attname)|| '), 1) ) from ' || quote_ident(pgt.schemaname)|| '.'||quote_ident(t.relname)|| ';'
 from pg_class as s,
      pg_depend as d,
      pg_class as t,
