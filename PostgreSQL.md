@@ -17,6 +17,10 @@ pg_dump db > db.sql -h localhost -U dbuser
 ```postgresql
 pg_dump db > db.sql --data-only -h localhost -U dbuser
 ```
+#### Dump data as sql inserts  
+```postgresql  
+pg_dump --no-owner --no-acl --column-inserts db > db.sql
+````
 #### Dump without owner and access control list
 ```postgresql
 pg_dump --no-owner --no-acl db > db.sql -h localhost -U dbuser
